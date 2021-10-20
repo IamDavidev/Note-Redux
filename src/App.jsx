@@ -10,8 +10,7 @@ function App() {
 
   return (
    <div>
-        aplicando reducers en react y creado un aplicacion de notas 
-        <p>hjhk</p>
+        
    </div>
   )
 }

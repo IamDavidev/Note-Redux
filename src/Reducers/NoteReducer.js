@@ -16,3 +16,4 @@ const NoteReducer = (state = [], action) => {
 };
 
 export default NoteReducer;
+

@@ -21,15 +21,14 @@ function App() {
     });
   };
 
-  const handleImportant = (id) =>{
+  const handleImportant = (id) => {
     dispatch({
-      type:'@note/important',
-      payload:{
-        id
-      }
-    })
-    console.log(state);
-  } 
+      type: '@note/important',
+      payload: {
+        id,
+      },
+    });
+  };
 
   return (
     <div>
@@ -41,14 +40,12 @@ function App() {
         {state.map((i) => {
           return (
             <div key={i.id}>
-              {i.imptr === true ? (
-                <li style={{ 'color': '#0ff' }}>{i.content} </li>
+              {i.important === true ? (
+                <li style={{ color: '#0ff' }}>{i.content} </li>
               ) : (
                 <li>{i.content}</li>
               )}
-              <button onClick={()=> handleImportant(i.id)} >
-                !color
-              </button>
+              <button onClick={() => handleImportant(i.id)}>!color</button>
             </div>
           );
         })}

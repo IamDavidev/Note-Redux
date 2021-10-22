@@ -1,4 +1,4 @@
-const NoteReducer = (state = [], action) => {
+export const NoteReducer = (state = [], action) => {
   if (action.type === '@note/add') {
     return [...state, action.payload];
   }
@@ -25,7 +25,6 @@ const NoteReducer = (state = [], action) => {
   // }
 };
 
-export default NoteReducer;
 // switch (action.type) {
 //   case '@note/add':
 //     return [...state, action.payload];
@@ -42,3 +41,23 @@ export default NoteReducer;
 //   default:
 //     return state;
 // }
+
+export const createNote = (content) => {
+  return {
+    type: '@note/add',
+    payload: {
+      id: content,
+      important: false,
+      content,
+    },
+  };
+};
+
+export const toggleImportant = (id) => {
+  return {
+    type: '@note/important',
+    payload: {
+      id,
+    },
+  };
+};

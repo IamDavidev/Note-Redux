@@ -2,15 +2,22 @@ body{
   background-color: rgb(37, 37, 37);
   font-size:30px
 }
+/* style form  */
 input{
   font-size:24px;
   background:#080808;
   color:#0ff;
 
 }
-button{
+.btn__submit{
   color:#0ff;
   background:rgb(37, 37, 37);
   margin:20px;
   font-size:30px;
+}
+
+button{
+  background:#a9a9a9;
+  color:#000;
+  font-size:20px;
 }

@@ -16,14 +16,14 @@ function App() {
       payload: {
         content,
         id: content,
-        imptr: true,
+        important: true,
       },
     });
   };
 
   const handleImportant = (id) =>{
     dispatch({
-      type:'@note/imptr',
+      type:'@note/important',
       payload:{
         id
       }

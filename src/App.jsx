@@ -1,22 +1,27 @@
-// import { useReducer } from 'react';
+//imports libreari
+import { useReducer } from 'react';
 // import logo from './logo.svg';
 import {
   NoteReducer,
   createNote,
   toggleImportant,
 } from './Reducers/NoteReducer';
-
-// import { useDispatch, useSelector } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
+// import styles 
+import './app.css'
 
 function App() {
   // const state = $store.getState()
-  const state = useSelector((state) => state);
-  // const noteImportants = useSelector(state => state.filter(note => note.important))
-  const dispatch = useDispatch();
+  const noteImportants = useSelector(state => state.filter(note => note.important))
   // const [state, dispatch] = useReducer(NoteReducer, []);
+
+  //use redux
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  console.log(useSelector(state => state = []));
   console.log(state);
 
+  //events buttons
   const addNote = (evt) => {
     evt.preventDefault();
     const { target } = evt;
@@ -25,9 +30,10 @@ function App() {
     dispatch(createNote(content));
   };
 
-  const handleImportant = (id) => {
+ const handleImportant = (id) => {
     dispatch(toggleImportant(id));
   };
+
 
   return (
     <div>

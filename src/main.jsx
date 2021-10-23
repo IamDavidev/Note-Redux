@@ -9,7 +9,7 @@ const $root = document.getElementById('root');
 
 
 const store = createStore(NoteReducer)
-
+// store.subscribe(()=>console.log(store.getState()))
 
 ReactDOM.render(
   <Provider store={store}>

@@ -12,11 +12,10 @@ import './app.css'
 
 function App() {
   // const state = $store.getState()
-  const noteImportants = useSelector(state => state.filter(note => note.important))
   // const [state, dispatch] = useReducer(NoteReducer, []);
-
   //use redux
   const state = useSelector((state) => state);
+  const noteImportants = useSelector(state => state.filter(note => note.important))
   const dispatch = useDispatch();
   console.log(useSelector(state => state = []));
   console.log(state);

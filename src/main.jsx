@@ -6,13 +6,16 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { NoteReducer } from './Reducers/NoteReducer';
+import NoteFilter from './Reducers/NoteFilter';
+// import {NoteFilter} from './Reducers/NoteFilter'
+
 //#endregion
 
 const $root = document.getElementById('root');
 // redux store
 const reducer = combineReducers({
-  notes: NoteReducer,
-  notefilter: NoteFilter,
+  NoteReducer,
+  NoteFilter
 });
 const store = createStore(reducer);
 

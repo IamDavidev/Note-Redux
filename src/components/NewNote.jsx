@@ -8,9 +8,9 @@ const NewNote = () => {
   const addNote = (evt) => {
     evt.preventDefault();
     const { target } = evt;
-    const content = target.note.value;
+    const description = target.note.value;
     target.note.value = ' ';
-    dispatch(createNote(content));
+    dispatch(createNote(description));
   };
 
   return (

@@ -24,13 +24,10 @@ const Notes = () => {
   const state = useSelector((state) => state.NoteReducer);
   const dispatch = useDispatch();
   console.log(state);
-
   //evt
   const handleImportant = (id) => {
-    // console.log(dispatch(toggleImportant(id)));
     dispatch(toggleImportant(id));
   };
-
   // render the notes
   return (
     <div>

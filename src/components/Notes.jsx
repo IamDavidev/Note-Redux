@@ -1,9 +1,11 @@
-//#region imports 
+//#region imports
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleImportant } from '../helpers/EventsReducer';
+// import MapNotes from '../helpers/HelpMap';
 //#endregion
-// export default 
+// export default
 function MapNotes({ i, handleImportant }) {
+  console.log(i + ': ' + handleImportant);
   return (
     <div key={i.id}>
       {i.important === true ? (
@@ -11,11 +13,10 @@ function MapNotes({ i, handleImportant }) {
       ) : (
         <li>{i.description}</li>
       )}
-      <button onClick={() => handleImportant(i.id)}>!color</button>
+      {/* <button onClick={() => handleImportant(i.id)}>!color</button> */}
     </div>
   );
 }
-
 
 const Notes = () => {
   //react - redux
@@ -27,9 +28,15 @@ const Notes = () => {
   const handleImportant = (id) => {
     dispatch(toggleImportant(id));
   };
-  
+
   // render the notes
-  return <ul>{state.map((i) => <MapNotes i={i} key={i.id} handleImportant={handleImportant} />)}</ul>;
+  return (
+    <ul>
+      {state.map((i) => (
+        <MapNotes i={i} handleImportant={handleImportant} />
+      ))}
+    </ul>
+  );
 };
 
 export default Notes;

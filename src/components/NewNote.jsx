@@ -16,8 +16,7 @@ const NewNote = () => {
   return (
     <div className="new-note">
       <form onSubmit={addNote}>
-        <input type="text" name="note" placeholder="Title" />
-        <textarea placeholder="Note"></textarea>
+        <input type="text" name="note" placeholder="Description" />
         <button className="btn__submit">Add</button>
       </form>
     </div>

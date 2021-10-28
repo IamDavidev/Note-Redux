@@ -5,7 +5,7 @@ export const createNote = (description) => {
       payload: {
         id: description,
         important: false,
-        description,
+        description:description,
       },
     };
   };
@@ -14,7 +14,7 @@ export const createNote = (description) => {
     return {
       type: '@note/important',
       payload: {
-        id,
+        id:id,
       },
     };
   };

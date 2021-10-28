@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleImportant } from '../helpers/EventsReducer';
 // import MapNotes from '../helpers/HelpMap';
 //#endregion
-// export default
+//#region MapNotes
 function MapNotes({ i, handleImportant }) {
   console.log(i + ': ' + handleImportant);
   return (
@@ -18,6 +18,7 @@ function MapNotes({ i, handleImportant }) {
   );
 }
 
+//#endregion
 const Notes = () => {
   //react - redux
   const state = useSelector((state) => state.NoteReducer);
@@ -26,16 +27,29 @@ const Notes = () => {
 
   //evt
   const handleImportant = (id) => {
+    // console.log(dispatch(toggleImportant(id)));
     dispatch(toggleImportant(id));
   };
 
   // render the notes
   return (
-    <ul>
+    <div>
       {state.map((i) => (
-        <MapNotes i={i} handleImportant={handleImportant} />
+        // <MapNotes i={i} handleImportant={handleImportant} />
+        <ul key={i.id}>
+          {i.important === true ? (
+            <li style={{ color: '#0ff' }}>
+              <strong>{i.description}</strong>
+            </li>
+          ) : (
+            <li>
+              <strong>{i.description}</strong>
+            </li>
+          )}
+          <button onClick={() => handleImportant(i.id)}>!color</button>
+        </ul>
       ))}
-    </ul>
+    </div>
   );
 };
 

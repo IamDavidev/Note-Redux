@@ -7,7 +7,7 @@ export default function MapNotes({ i, handleImportant }) {
       ) : (
         <li>{i.description}</li>
       )}
-      {/* <button onClick={() => handleImportant(i.id)}>!color</button> */}
+      <button onClick={() => handleImportant(i.id)}>!color</button>
     </div>
   );
 }

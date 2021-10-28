@@ -1,7 +1,6 @@
 const initialState = [
   {
     id: 1,
-    title: 'bienvnidad a notes dlt redux',
     description: 'add you notes',
     important: true,
   },

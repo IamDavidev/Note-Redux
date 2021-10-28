@@ -25,9 +25,7 @@ const Notes = () => {
   const dispatch = useDispatch();
   console.log(state);
   //evt
-  const handleImportant = (id) => {
-    dispatch(toggleImportant(id));
-  };
+  
   // render the notes
   return (
     <div>
@@ -43,7 +41,6 @@ const Notes = () => {
               <strong>{i.description}</strong>
             </li>
           )}
-          <button onClick={() => handleImportant(i.id)}>!color</button>
         </ul>
       ))}
     </div>
